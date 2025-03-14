@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload & Download</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            color: #333;
+            margin-top: 20px;
+        }
+        .container {
+            background: white;
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        input {
+            margin: 10px 0;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        p {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        a {
+            text-decoration: none;
+            font-size: 16px;
+            color: #007bff;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>File Upload & Download</h2>
+
+    <!-- File Upload Section -->
+    <div class="container">
+        <h3>Upload a File</h3>
+        <input type="file" id="fileInput" accept=".png, .jpg">
+        <button onclick="uploadFile()">Upload</button>
+        <p id="uploadMessage"></p>
+    </div>
+
+    <!-- File Download Section -->
+    <div class="container">
+        <h3>Download File</h3>
+        <a href="sample.txt" download>Click here to download sample.txt</a>
+    </div>
+
+    <script>
+        function uploadFile() {
+            let fileInput = document.getElementById("fileInput");
+            let uploadMessage = document.getElementById("uploadMessage");
+
+            if (fileInput.files.length === 0) {
+                uploadMessage.innerText = "Please select a file to upload.";
+                uploadMessage.style.color = "red";
+                return;
+            }
+
+            let file = fileInput.files[0];
+            let allowedExtensions = ["image/png", "image/jpeg"];
+
+            if (!allowedExtensions.includes(file.type)) {
+                uploadMessage.innerText = "Invalid file type! Only .png and .jpg allowed.";
+                uploadMessage.style.color = "red";
+            } else {
+                uploadMessage.innerText = "File Uploaded Successfully!";
+                uploadMessage.style.color = "green";
+            }
+        }
+    </script>
+</body>
+</html>

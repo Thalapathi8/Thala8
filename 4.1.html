@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Preferences</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            color: #333;
+            margin-top: 20px;
+        }
+        .container {
+            background: white;
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        input {
+            margin: 10px 0;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        p {
+            font-size: 16px;
+            font-weight: bold;
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>User Preferences</h2>
+
+    <div class="container">
+        <h3>Select Your Preferences</h3>
+
+        <!-- Checkboxes for multiple options -->
+        <label><input type="checkbox" id="newsletters"> Newsletters</label><br>
+        <label><input type="checkbox" id="updates"> Updates</label><br>
+        <label><input type="checkbox" id="offers"> Offers</label><br><br>
+
+        <!-- Radio buttons for gender selection -->
+        <h3>Select Gender</h3>
+        <label><input type="radio" name="gender" value="Male"> Male</label><br>
+        <label><input type="radio" name="gender" value="Female"> Female</label><br>
+        <label><input type="radio" name="gender" value="Other"> Other</label><br><br>
+
+        <!-- Save Button -->
+        <button onclick="savePreferences()">Save</button>
+        
+        <!-- Success message -->
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function savePreferences() {
+            let selectedPreferences = [];
+            let gender = document.querySelector('input[name="gender"]:checked');
+
+            if (document.getElementById("newsletters").checked) selectedPreferences.push("Newsletters");
+            if (document.getElementById("updates").checked) selectedPreferences.push("Updates");
+            if (document.getElementById("offers").checked) selectedPreferences.push("Offers");
+
+            if (!gender) {
+                document.getElementById("message").innerText = "Please select a gender.";
+                document.getElementById("message").style.color = "red";
+                return;
+            }
+
+            document.getElementById("message").innerText = "Preferences Saved!";
+            document.getElementById("message").style.color = "green";
+            
+            console.log("Saved Preferences:", selectedPreferences);
+            console.log("Selected Gender:", gender.value);
+        }
+    </script>
+</body>
+</html>

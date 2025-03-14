@@ -1,0 +1,59 @@
+========
+|JUNIT|
+========
+
+came in 1997
+developed by Erick Gama
+another name of JUNIT as JUPITER (5th planet,5th version)
+	
+We will seeing this key features
+	annotation
+	test life cycle method
+	assertion
+	PARAMETERIZED testing
+	how to integrate
+	LIFECYCLE of testing
+
+Components of JUNIT 
+
+Junit 4 
+Jupiter
+
+Vintage topics
+----------------
+Annotations
+Life cycle methods
+Assertions
+Assumptions
+Parameterized methods
+Dynamic methods
+Tagging & Filtering 
+
+@Test ---> used to change the method as testing tool
+@Test ---> It is used only on methods not on classes 
+
+ASSERTIONS
+=============
+Assertion are used to check the values equal to it or not
+
+Methods of Assertion
+---------------------
+assertEquals()
+assertTrue()
+assertFalse()
+assertSame()
+assertNotSame()
+assertNull()
+assertNotNull()
+assertThrows()
+assertNotThrow()
+assertAll()
+
+
+ANNOTATIONS
+============
+
+BeforeAll |
+	  |------------------> Common instruction to clean up the test cases before and after executing the test cases.
+AfterAll  | 
+

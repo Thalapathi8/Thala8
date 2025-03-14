@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+</head>
+<body>
+    <h2>User Dashboard</h2>
+
+    <input type="text" id="searchHotel" placeholder="Search Hotel">
+    <button id="searchButton" onclick="showHotels()">Search</button>
+
+    <div id="hotelList"></div>
+
+    <div id="bookingForm" style="display:none;">
+        <h3>Booking Form</h3>
+        <input type="text" id="name" placeholder="Your Name"><br>
+        <input type="email" id="email" placeholder="Email"><br>
+        <input type="text" id="phone" placeholder="Phone"><br>
+        <input type="date" id="date"><br>
+        <input type="number" id="days" placeholder="No. of Days"><br>
+        <button id="confirmBooking" onclick="confirmBooking()">Confirm Booking</button>
+    </div>
+
+    <div id="bookingMessage"></div>
+
+    <script>
+        function showHotels() {
+            document.getElementById("hotelList").innerHTML = `
+                <h3>Available Hotels</h3>
+                <p>Hotel Paradise - Goa - $100/night
+                <button data-hotel-id="101" onclick="showBookingForm()">Book Now</button></p>
+            `;
+        }
+
+        function showBookingForm() {
+            document.getElementById("bookingForm").style.display = "block";
+        }
+
+        function confirmBooking() {
+            document.getElementById("bookingMessage").innerText = "Booking Successful!";
+        }
+    </script>
+</body>
+</html>

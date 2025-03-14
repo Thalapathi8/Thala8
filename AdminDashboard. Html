@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h2>Admin Dashboard</h2>
+
+    <table id="bookingTable" border="1">
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Hotel Name</th>
+                <th>Booking Date</th>
+                <th>No. of Days</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="bookingBody">
+            <tr>
+                <td>John Doe</td>
+                <td>Hotel Paradise</td>
+                <td>2025-03-20</td>
+                <td>3</td>
+                <td class="status">Confirmed</td>
+                <td><button onclick="cancelBooking(this)">Cancel</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="cancelMessage"></div>
+
+    <script>
+        function cancelBooking(button) {
+            const row = button.closest("tr");
+            row.querySelector(".status").innerText = "Cancelled";
+            document.getElementById("cancelMessage").innerText = "Booking Cancelled Successfully!";
+            row.remove(); // Optional: remove row if required
+        }
+    </script>
+</body>
+</html>
