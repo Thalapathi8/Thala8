@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>User Management System</h2>
+
+    <!-- Create User -->
+    <div class="container">
+        <h3>Create User</h3>
+        <input type="text" id="username" placeholder="Username">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="createUser()">Create</button>
+        <p id="createMessage"></p>
+    </div>
+
+    <!-- Search User -->
+    <div class="container">
+        <h3>Search User</h3>
+        <input type="text" id="userId" placeholder="Enter User ID">
+        <button onclick="getUser()">Fetch</button>
+        <p id="userDetails"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
